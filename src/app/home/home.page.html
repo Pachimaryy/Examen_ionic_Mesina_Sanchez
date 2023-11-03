@@ -1,20 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <h1>Bienvenido al peor login que pudimos hacer XD</h1>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-button (click)="playMusic();">Bienvenida</ion-button>
+    <ion-button (click)="stopMusic();">Toy cansado jefe</ion-button>
+
+    <ion-img src="https://media.discordapp.net/attachments/596794926688239617/1169742713298628678/FsofjGWWIAMZfob.jpg?ex=655682cb&is=65440dcb&hm=f9e686aa7c2973d16ed88af2f8fc0496a1dfdd58565011ff0e711962c95fc810&="></ion-img>
+    
+    
+  <ion-button (click)="goToItem();">Subir un Item</ion-button>
+  <ion-button (click)="goToLogin();">Salir</ion-button>
+  </ion-card>
 </ion-content>

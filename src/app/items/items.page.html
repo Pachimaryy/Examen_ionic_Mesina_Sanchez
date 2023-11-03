@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="objeto">
+    <ion-input type="text" placeHolder="nombre" formControlName="nombre"></ion-input>
+    <ion-input type="text" placeHolder="descripcion" formControlName="descripcion"></ion-input>
+    <ion-input type="text" placeHolder="precio" formControlName="precio"></ion-input>
+
+  </form>
+
+  <ion-button (click)="subirArchivo();">Subir Cosa</ion-button>
+  <ion-button (click)="goTohome();">Ir de vuelta al Home</ion-button>
+</ion-content>

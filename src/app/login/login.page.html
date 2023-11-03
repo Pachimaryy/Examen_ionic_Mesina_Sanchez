@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="credentials">
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="email" placeHolder="Email" formControlName="email" ></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="text" placeHolder="Ingrese su contraseña" formControlName="password" ></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="text" placeholder="Nombre de usuario" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <p>Ingrese su edad:</p>
+      <div class="ion-text-center">
+        <h1>{{ randomNumber }}</h1>
+        <ion-button expand="full" (click)="generateRandomNumber(); playMusic2()" >Usted tiene:</ion-button>
+      </div>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="text" placeholder="telefono" formControlName="telefono">
+        <p>Ingrese su numero de telefono:</p>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+        <ion-range aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="0" [max]="9"></ion-range>
+      </ion-input>
+
+    </ion-item>
+  </form>
+
+  <ion-button type="button" (click)="register()">Registrarse</ion-button>
+  <ion-button (click)="login();">Logearse</ion-button>
+</ion-content>

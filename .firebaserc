@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "prueba-2-ad125"
+  },
+  "targets": {
+    "prueba-2-ad125": {
+      "hosting": {
+        "app": [
+          "prueba-2-ad125"
+        ]
+      }
+    }
+  }
+}
