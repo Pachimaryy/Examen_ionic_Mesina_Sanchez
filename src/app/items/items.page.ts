@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
 import { FileService } from '../file.service';
 import { FormBuilder, FormGroup, Validators, FormControl  } from '@angular/forms';
+import { ItemService } from './item.service';
 
 
 @Component({
@@ -11,44 +12,48 @@ import { FormBuilder, FormGroup, Validators, FormControl  } from '@angular/forms
 })
 export class ItemsPage implements OnInit {
 
-  objeto !: FormGroup;
+  items !:any[];
 
   constructor(
-    private router : Router,
     private fileService: FileService,
-    private formBuilder : FormBuilder,
+    private itemService: ItemService,
+    private router : Router
+    
     
   ) { }
 
-  get nombre (){ return this.objeto.get('nombre');}
-  get descripcion (){ return this.objeto.get('descripcion');}
-  get precio (){ return this.objeto.get('precio');}
-
   ngOnInit() {
-    this.objeto = this.formBuilder.group({
-      nombre : ['',[Validators.required, Validators.minLength(3)]],
-      descripcion : ['',[Validators.required, Validators.minLength(1)]],
-      precio : ['', [Validators.required, Validators.minLength(3)]]
-    })
+    this.itemService.getAllItems().then( res => {
+      this.items = res;
+      console.log(this.items);
+    });
+
+
+    
   }
 
-  goTohome (){
+  ionRefresh() {
+    // Actualiza la lista
+    this.items.push('Item nuevo');
+  }
+  
+  goTo(path:string){
+    this.router.navigateByUrl('items/'+path);
+
+  }
+
+  goHome(){
     this.router.navigateByUrl('home');
   }
 
-  subirArchivo (){
-    const path = 'objetos/' + this.objeto.value.categoria + '/' + this.objeto.value.subCategoria;
-
-    try {
-      this.fileService.addCosa(
-        this.objeto.value,
-        path
-      )
-    } catch (e) {
-      console.log("Error mi rey");
-      console.log(e);
-    }
+  goToAdd(){
+    this.router.navigateByUrl('items/add');
   }
+
+ 
+ 
+
+  
 
 
 

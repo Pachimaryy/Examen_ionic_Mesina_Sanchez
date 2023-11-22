@@ -35,9 +35,19 @@ export class HomePage {
   constructor(
     private router : Router,
     private authService: AuthService
-  ) {
-    this.audio = new Audio();
-    this.audio.src ='assets/music/circo.mp3'
+  ) { }
+
+  goTo (destiny:string){
+    this.router.navigateByUrl(destiny);
+  }
+
+  logout () {
+    this.authService.logout();
+    this.router.navigateByUrl('login')
+  }
+
+  goToPerfil(){
+    this.router.navigateByUrl('perfil');
   }
 
 }

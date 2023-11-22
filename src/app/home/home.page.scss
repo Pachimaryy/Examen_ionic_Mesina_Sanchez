@@ -25,3 +25,33 @@
 #container a {
   text-decoration: none;
 }
+
+page-home {
+  .content {
+    padding: 20px;
+  }
+
+  .welcome-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f8f8f8;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+}

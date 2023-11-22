@@ -17,8 +17,27 @@ const routes: Routes = [
   },
   {
     path: 'items',
-    loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
+    children : [
+      {
+        path:'',
+        loadChildren: () => import('./items/items.module').then(m => m.ItemsPageModule)
+      },
+      {
+        path: 'add',
+        loadChildren:() => import('./items/add/add.module').then(m => m.AddPageModule)
+      },
+      {
+        path: ':itemId',
+        loadChildren:() => import('./items/detail/detail.module').then(m=> m.DetailPageModule)
+      }
+    ]
+    
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  
 ];
 
 @NgModule({

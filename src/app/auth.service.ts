@@ -12,12 +12,14 @@ export class AuthService {
 
   async register ({email,password,nombre,edad,telefono}:any){
     try {
-      console.log("Creando Usuario",email,nombre,edad,telefono)
+      console.log("Creando Usuario",email)
       const user = await createUserWithEmailAndPassword(
         this.auth,
         email,
         password, 
       );
+
+      const userId = user
       return user;
     } catch (e) {
       console.log(e);

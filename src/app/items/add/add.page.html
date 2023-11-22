@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref="/home"></ion-back-button>
+    <ion-title>Añadir una cosa chistosa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="item">
+    <ion-input type="text" placeHolder="nombre" formControlName="name"></ion-input>
+    <ion-input type="text" placeHolder="descripcion" formControlName="detail"></ion-input>
+    <ion-input placeHolder="Imagen" type="text" formControlName="imageURL"></ion-input>
+  </form> 
+  <ion-button (click)="addItem();">Añadir Item</ion-button>
+  
+</ion-content>
